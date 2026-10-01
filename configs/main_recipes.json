@@ -1,0 +1,58 @@
+{
+  "common": {
+    "AdamW_betas": [
+      0.9,
+      0.999
+    ],
+    "AdamW_epsilon": 1e-08,
+    "actor_lr": 1e-05,
+    "gradient_norm_max": 1,
+    "microbatch": 2,
+    "no_entropy_bonus": true,
+    "passes": 2,
+    "profile": "F-M",
+    "rollout_prompts": 8,
+    "samples_per_prompt": 4,
+    "warmup_slots": 8,
+    "weight_decay": 0
+  },
+  "methods": {
+    "grpo": {
+      "denominator": "32 responses; mean tokens within each response",
+      "group_size": 4,
+      "k3_loss_beta": 0.02,
+      "policy_clip": 0.2,
+      "population_std_epsilon": 0.0001,
+      "roles": [
+        "actor",
+        "reference"
+      ]
+    },
+    "ppo": {
+      "critic_head": "zero FP32 Linear(1536,1,bias=True)",
+      "denominator": "whole-rollout valid action count",
+      "gamma": 1.0,
+      "lambda": 0.95,
+      "policy_clip": 0.2,
+      "reference_reward_beta": 0.02,
+      "roles": [
+        "actor",
+        "reference",
+        "critic"
+      ],
+      "value_clip": 0.2,
+      "value_factor": 0.5,
+      "whitening_population_epsilon": 1e-08
+    },
+    "rft": {
+      "denominator": "whole-rollout positive response count; mean tokens per response",
+      "duplicates_retained": true,
+      "reference": null,
+      "roles": [
+        "actor"
+      ],
+      "zero_positive": "skip before zero_grad/backward/step"
+    }
+  },
+  "ppo_critic_lr": 0.0001
+}

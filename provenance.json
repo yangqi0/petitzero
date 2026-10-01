@@ -1,0 +1,693 @@
+{
+  "schema": "PZ_M12A_PROVENANCE_V1",
+  "author_owner": "Yang Qi",
+  "assistance": "Coding-agent-assisted implementation, execution assistance, analysis and documentation under owner instructions",
+  "not_public_release": true,
+  "runtime": "M12C_PORTABLE_LEARNED_PPO_SMOKE_RESUME_PASSED_OTHER_GPU_PATHS_UNTESTED",
+  "question_data": {
+    "file": "data/endpoint_counts.csv",
+    "rows": 4992,
+    "sources": [
+      {
+        "artifact": "M10/results_v1/PER_QUESTION.csv",
+        "select": "all10 policies",
+        "sha256": "a3627ac0ef300a9e7738b160bac1dd4c6c87a233e9123445623432a26e361115"
+      },
+      {
+        "artifact": "M11/results_v1/endpoint_questions.csv",
+        "select": "PPO_ZERO17/29/43 only; reused controls verified equal",
+        "sha256": "33ffe629311fc3f6bf7533ab919dea0cd53b5a502c7b8ddc90d97e58ddea189b"
+      }
+    ]
+  },
+  "headlines": [
+    {
+      "claim": "CONFIRM128_RESERVED SFT pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "SFT"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "one SFT pool",
+      "output_table": "results/seed_points.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED GRPO pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "GRPO17",
+          "GRPO29",
+          "GRPO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED RFT pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "RFT17",
+          "RFT29",
+          "RFT43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED PPO pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "PPO17",
+          "PPO29",
+          "PPO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED PPO_ZERO pass@1",
+      "source_table": "data/source_tables/m11_seed_points.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "PPO_ZERO17",
+          "PPO_ZERO29",
+          "PPO_ZERO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED ZERO_MINUS_LEARNED pass@1",
+      "source_table": "data/source_tables/m11_paired.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "metric": "pass@1"
+      },
+      "fields": [
+        "mean_difference_pp",
+        "sample_SD_difference_pp",
+        "seed17_difference_pp",
+        "seed29_difference_pp",
+        "seed43_difference_pp"
+      ],
+      "output_table": "results/primary_zero_minus_learned.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED SFT pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "SFT"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "one SFT pool",
+      "output_table": "results/seed_points.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED GRPO pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "GRPO17",
+          "GRPO29",
+          "GRPO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED RFT pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "RFT17",
+          "RFT29",
+          "RFT43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED PPO pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "PPO17",
+          "PPO29",
+          "PPO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED PPO_ZERO pass@32",
+      "source_table": "data/source_tables/m11_seed_points.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "policy": [
+          "PPO_ZERO17",
+          "PPO_ZERO29",
+          "PPO_ZERO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "CONFIRM128_RESERVED ZERO_MINUS_LEARNED pass@32",
+      "source_table": "data/source_tables/m11_paired.csv",
+      "row_selector": {
+        "suite": "CONFIRM128_RESERVED",
+        "band": "all",
+        "metric": "pass@32"
+      },
+      "fields": [
+        "mean_difference_pp",
+        "sample_SD_difference_pp",
+        "seed17_difference_pp",
+        "seed29_difference_pp",
+        "seed43_difference_pp"
+      ],
+      "output_table": "results/primary_zero_minus_learned.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED SFT pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "SFT"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "one SFT pool",
+      "output_table": "results/seed_points.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED GRPO pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "GRPO17",
+          "GRPO29",
+          "GRPO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED RFT pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "RFT17",
+          "RFT29",
+          "RFT43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED PPO pass@1",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "PPO17",
+          "PPO29",
+          "PPO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED PPO_ZERO pass@1",
+      "source_table": "data/source_tables/m11_seed_points.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "PPO_ZERO17",
+          "PPO_ZERO29",
+          "PPO_ZERO43"
+        ]
+      },
+      "metric": "pass@1",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED ZERO_MINUS_LEARNED pass@1",
+      "source_table": "data/source_tables/m11_paired.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "metric": "pass@1"
+      },
+      "fields": [
+        "mean_difference_pp",
+        "sample_SD_difference_pp",
+        "seed17_difference_pp",
+        "seed29_difference_pp",
+        "seed43_difference_pp"
+      ],
+      "output_table": "results/primary_zero_minus_learned.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED SFT pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "SFT"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "one SFT pool",
+      "output_table": "results/seed_points.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED GRPO pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "GRPO17",
+          "GRPO29",
+          "GRPO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED RFT pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "RFT17",
+          "RFT29",
+          "RFT43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED PPO pass@32",
+      "source_table": "data/source_tables/m10_policy.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "PPO17",
+          "PPO29",
+          "PPO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED PPO_ZERO pass@32",
+      "source_table": "data/source_tables/m11_seed_points.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "policy": [
+          "PPO_ZERO17",
+          "PPO_ZERO29",
+          "PPO_ZERO43"
+        ]
+      },
+      "metric": "pass@32",
+      "operation": "mean/sample SD ddof1 of seed percentages",
+      "output_table": "results/method_summaries.csv"
+    },
+    {
+      "claim": "HISTORICAL_FINAL256_OBSERVED ZERO_MINUS_LEARNED pass@32",
+      "source_table": "data/source_tables/m11_paired.csv",
+      "row_selector": {
+        "suite": "HISTORICAL_FINAL256_OBSERVED",
+        "band": "all",
+        "metric": "pass@32"
+      },
+      "fields": [
+        "mean_difference_pp",
+        "sample_SD_difference_pp",
+        "seed17_difference_pp",
+        "seed29_difference_pp",
+        "seed43_difference_pp"
+      ],
+      "output_table": "results/primary_zero_minus_learned.csv"
+    },
+    {
+      "claim": "Measured training resource table",
+      "source_table": "data/source_tables/training_resources.csv",
+      "row_selector": "all six rows",
+      "conversion": "bytes/2**30 GiB; phase seconds are not full end-to-end"
+    }
+  ],
+  "executables": [
+    {
+      "destination": "petitzero/__init__.py",
+      "source_sha256": "3b7a396c3d41d0b4a2238b2fa3d69f8907e6cd4a10ab8d8255b7ecada12d13b4",
+      "destination_sha256": "3b7a396c3d41d0b4a2238b2fa3d69f8907e6cd4a10ab8d8255b7ecada12d13b4",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/__init__.py"
+    },
+    {
+      "destination": "petitzero/countdown.py",
+      "source_sha256": "530e029ca5f29cb6045c014a059af4dbbc40b67bd8ff1da66c23b0474088358a",
+      "destination_sha256": "530e029ca5f29cb6045c014a059af4dbbc40b67bd8ff1da66c23b0474088358a",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/countdown.py"
+    },
+    {
+      "destination": "petitzero/calibration.py",
+      "source_sha256": "3cf642777d72c0a2c2fdc406842d614a387abe96356ab85875b8d53dfb9de97f",
+      "destination_sha256": "3cf642777d72c0a2c2fdc406842d614a387abe96356ab85875b8d53dfb9de97f",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/calibration.py"
+    },
+    {
+      "destination": "petitzero/grpo.py",
+      "source_sha256": "70101f63b09841f50a7a5ca5abce7fa6b43913cbbff1b5d6c25802d25dd21900",
+      "destination_sha256": "70101f63b09841f50a7a5ca5abce7fa6b43913cbbff1b5d6c25802d25dd21900",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/grpo.py"
+    },
+    {
+      "destination": "petitzero/grpo_runtime.py",
+      "source_sha256": "e53e97318d41c1cb3af6bc19ce7bf3f742f7188c2fb4ebdf3bc4092a3e787fe5",
+      "destination_sha256": "e53e97318d41c1cb3af6bc19ce7bf3f742f7188c2fb4ebdf3bc4092a3e787fe5",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/grpo_runtime.py"
+    },
+    {
+      "destination": "petitzero/ppo.py",
+      "source_sha256": "1f49572a7fa0f2b50530e83d5571f9994885cc5cb075e1a06d456268886974e3",
+      "destination_sha256": "1f49572a7fa0f2b50530e83d5571f9994885cc5cb075e1a06d456268886974e3",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/ppo.py"
+    },
+    {
+      "destination": "petitzero/ppo_runtime.py",
+      "source_sha256": "853a0ff71a45ca96f94516b6893bb622dcfd261bc13e819361fbb04e10ab1ab3",
+      "destination_sha256": "853a0ff71a45ca96f94516b6893bb622dcfd261bc13e819361fbb04e10ab1ab3",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/ppo_runtime.py"
+    },
+    {
+      "destination": "petitzero/rft.py",
+      "source_sha256": "f462bb3877cebb26ad59bf831c33de8b70c2e9f44d24966093280a912c192047",
+      "destination_sha256": "f462bb3877cebb26ad59bf831c33de8b70c2e9f44d24966093280a912c192047",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/rft.py"
+    },
+    {
+      "destination": "petitzero/rft_runtime.py",
+      "source_sha256": "f9e3141513dee13d85913b68e0513f9d14e0e4df5c924ac8de7a4d71e9cf8b89",
+      "destination_sha256": "f9e3141513dee13d85913b68e0513f9d14e0e4df5c924ac8de7a4d71e9cf8b89",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/rft_runtime.py"
+    },
+    {
+      "destination": "petitzero/v2/__init__.py",
+      "source_sha256": "a79da077bad15cfb4a48adc67248df34bcaf76676eb421355f73a082a751b63d",
+      "destination_sha256": "a79da077bad15cfb4a48adc67248df34bcaf76676eb421355f73a082a751b63d",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/v2/__init__.py"
+    },
+    {
+      "destination": "petitzero/v2/methods.py",
+      "source_sha256": "502ceb22cc50132787588d7c221043373107fa7a2875a090dc686b65cbcf984d",
+      "destination_sha256": "502ceb22cc50132787588d7c221043373107fa7a2875a090dc686b65cbcf984d",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/v2/methods.py"
+    },
+    {
+      "destination": "petitzero/v2/profile.py",
+      "source_sha256": "023cb1eccd79517a328f8660825369d12b073a7c448949d76ee564d3126eea50",
+      "destination_sha256": "023cb1eccd79517a328f8660825369d12b073a7c448949d76ee564d3126eea50",
+      "kind": "byte_identical",
+      "historical_artifact": "runs/m11_ppo_zero_value_ablation_v1/source/src/petitzero/v2/profile.py"
+    },
+    {
+      "destination": "petitzero/metrics.py",
+      "source_sha256": "e02bc57f84f601e96a425a2e806038c3770161a7a1bae0129997300c94cb9150",
+      "destination_sha256": "8c7804d6cd72e72870dcaa59a5a70343b5e5826c638b328dda2792afb9f12696",
+      "kind": "adapted",
+      "historical_artifact": "runs/m10_v2_joint_final_confirm_eval_v1/code/metrics_core.py"
+    },
+    {
+      "destination": "pz.py",
+      "kind": "Final public-packaging help/status string only; no new GPU test",
+      "source_context": "new M12; no historical runtime reused",
+      "destination_sha256": "6f9eb3d4295578d88c7244675dd30345625ee7392d1ff4c39cb1acf9214d4cd0",
+      "m12c_destination_sha256": "95a32daff3dfe9188209de665b81a29a8c6fe40476a0302094e015cc7f9766f5"
+    },
+    {
+      "destination": "petitzero/offline.py",
+      "kind": "new operational/offline code",
+      "source_context": "M10 metrics_core + analysis_v1/figures.py, M11 saved paired definitions",
+      "destination_sha256": "bc2713a1dc5465adc1f0f8be54e4cad9f668e4fb95c12b2538bb56ffb65cfe12"
+    },
+    {
+      "destination": "petitzero/data_logic.py",
+      "kind": "adapted extraction of M1A builder partition/target/cold-subset functions",
+      "source_context": "PETITZERO_M1A_COLD_START_PACKAGE/scripts/build_m1_data.py",
+      "destination_sha256": "fae1ea30cfd4a83664aee55897f7ae3a8b5f096b73a02e0fd9f698774cf086c3"
+    },
+    {
+      "destination": "petitzero/planning.py",
+      "kind": "Final public-packaging help/status string only; no new GPU test",
+      "source_context": "new M12; no historical runtime reused",
+      "destination_sha256": "f6234b62407c16641e0c2e63b7f6710a6e668e6e47c59ef1469d06cd836ec6f0",
+      "m12c_destination_sha256": "af6acac2a6cbe7d63dac4df06d61a55d1a101dce4c9222ad71666c5989fc7e38"
+    },
+    {
+      "destination": "tests/test_cpu.py",
+      "kind": "new operational/offline code",
+      "source_context": "new M12; no historical runtime reused",
+      "destination_sha256": "762a5c32a75c528710e36bb8d68913411039cb411e6c5f09f451274288640cca"
+    },
+    {
+      "destination": "tests/guarded.py",
+      "kind": "M12A operational adaptation; explicit execution dispatch/guard; historical helpers unchanged",
+      "source_context": "new M12; no historical runtime reused",
+      "destination_sha256": "613da5f074aa1304673042d0cdf808f8e1fd6862f41f73b84ab4a39179ab6a03"
+    },
+    {
+      "destination": "petitzero/execution/__init__.py",
+      "destination_sha256": "c8a16651fc8cb370aad12fece9ca039091074d7110de102f38665ff4032a2025",
+      "kind": "M12A new operational integration",
+      "scientific_source_context": "M8 frozen StudyRunner; M10 actor worker; M11 durable checkpoint/zero dispatch; details in owner-only mapping"
+    },
+    {
+      "destination": "petitzero/execution/durable.py",
+      "destination_sha256": "7b5398c0b1769fa07cd222a0990a5ffeab9d614b089d55f48d6d63d00029e885",
+      "kind": "M12B narrow operational journal ownership fix",
+      "scientific_source_context": "M8 frozen StudyRunner; M10 actor worker; M11 durable checkpoint/zero dispatch; details in owner-only mapping",
+      "m12a_destination_sha256": "a611045f5fbb633c5d8f9755697631035f5200cedfa2dd369ed0c611993b4f3f"
+    },
+    {
+      "destination": "petitzero/execution/native.py",
+      "destination_sha256": "f1dbd8e3f9998d08b4a8b98ce6dbfc64d70d796263dc5e025a3729b2b74186e8",
+      "kind": "M12A new operational integration",
+      "scientific_source_context": "M8 frozen StudyRunner; M10 actor worker; M11 durable checkpoint/zero dispatch; details in owner-only mapping"
+    },
+    {
+      "destination": "petitzero/execution/protocol.py",
+      "destination_sha256": "5190c98bc085ff7b54a429804898f247f2737df8e64035e47e6105a0c667c0a5",
+      "kind": "M12A new operational integration",
+      "scientific_source_context": "M8 frozen StudyRunner; M10 actor worker; M11 durable checkpoint/zero dispatch; details in owner-only mapping"
+    },
+    {
+      "destination": "petitzero/execution/runner.py",
+      "destination_sha256": "8e6b48206e0c8bfc68e1a3c91502eb2c96b06ee73f57b7beb388a3471a223252",
+      "kind": "M12A new operational integration",
+      "scientific_source_context": "M8 frozen StudyRunner; M10 actor worker; M11 durable checkpoint/zero dispatch; details in owner-only mapping"
+    },
+    {
+      "destination": "petitzero/v2/study_utils.py",
+      "destination_sha256": "3424f2e4bca86e83f6bee6eb536167842a5c9540120429ea463ba7463b7c6627",
+      "kind": "byte-identical M11 standalone utilities"
+    },
+    {
+      "destination": "tests/test_execution.py",
+      "destination_sha256": "381e9f8805a2e0a1d24dfc2d46117fa296b32b3f38061f9759a043a954eada37",
+      "kind": "new synthetic CPU integration tests"
+    },
+    {
+      "destination": "tests/test_journal_snapshot.py",
+      "destination_sha256": "6176a71d982e37c7a40a4dac883eb5a7e70865106c2f8c79d4dd1a7545195297",
+      "kind": "M12B five focused CPU persistence regressions"
+    }
+  ],
+  "scientific_caveat": "Learned PPO43 recovered after failure; original slot192 commit identity absent; historical roundtrip and uninterrupted equivalence unproven. Pair43 and learned/paired summaries inherit this limitation.",
+  "tolerance_pp": 1e-10,
+  "non_statistical_claim_bindings": [
+    {
+      "claim": "Main recipes and optimizer settings",
+      "candidate_file": "configs/main_recipes.json",
+      "historical_artifact": "M8/METHOD_RECIPES.json"
+    },
+    {
+      "claim": "M1A config and lineage",
+      "candidate_file": "configs/m1a_recorded.json",
+      "historical_artifact": "M1A/config.json"
+    },
+    {
+      "claim": "M8 numerical max/gates",
+      "historical_artifact": "M8/REPORT_EN.md, Freeze smoke resume and actual work paragraph",
+      "value": 0.000115990639
+    },
+    {
+      "claim": "M11 actual work and boundary equality",
+      "historical_artifact": "M11/REPORT_EN.md, Engineering gates and actual work; TERMINAL_STATUS.json",
+      "m12_rerun": false
+    }
+  ],
+  "prior_candidate": {
+    "archive_sha256": "e106f951d509151d41f2c601d7858889005a4c53f5db1884904a518478c308e2",
+    "files": 51,
+    "status": "CPU_VALIDATED_GPU_RUNTIME_INCOMPLETE_NOT_RUN"
+  },
+  "m12b": {
+    "status": "FIXED_CPU_ONLY_GPU_NOT_RUN",
+    "cpu_tests": 38,
+    "guarded_imports": 21,
+    "model_attempts": 0,
+    "preserved_helpers": 12,
+    "historical_count_rows": 4992,
+    "historical_results_unchanged": true,
+    "change": "JSON snapshot ownership in durable.py; five regression tests; documentation only otherwise"
+  },
+  "m12c": {
+    "status": "M12C_PORTABLE_LEARNED_PPO_SMOKE_RESUME_PASSED_OTHER_GPU_PATHS_UNTESTED",
+    "production_python_byte_identical_to_m12b": true,
+    "existing_cpu_tests": 38,
+    "private_preparation_tests": 5,
+    "native_processes": 2,
+    "TRAIN_responses": 64,
+    "generated_actions": 640,
+    "actor_steps": 4,
+    "critic_steps": 4,
+    "normal_forwards": 224,
+    "native_autoregressive_forwards": 640,
+    "backward_calls": 128,
+    "checkpoint_layer_recomputations": 3584,
+    "historical_results_unchanged": true,
+    "other_native_paths": "NOT_RUN",
+    "uninterrupted_equivalence": "NOT_ESTABLISHED",
+    "documentation_updated_after_execution": true
+  },
+  "release_preparation": {
+    "status": "PUBLIC_WORKTREE_PREPARED_NOT_PUBLISHED_HISTORY_REVIEW_REQUIRED",
+    "model_work": 0,
+    "historical_results_and_figures_byte_identical_to_m12c": true,
+    "execution_runtime_and_scientific_helpers_byte_identical_to_m12c": true,
+    "help_status_string_changes": [
+      {
+        "path": "petitzero/planning.py",
+        "classification": "public help/status display string only",
+        "changes": [
+          {
+            "line": 6,
+            "before": "IMPLEMENTED_GPU_NOT_RUN: train/evaluate/smoke/resume have explicit --execute dispatch. CPU synthetic contracts do not validate model loading, CUDA or optimizer roundtrip.",
+            "after": "M12C_LEARNED_PPO_SMOKE_RESUME_VALIDATED_ONLY: GRPO/RFT/ppo_zero and standalone evaluation native paths, other devices/shapes and full replay remain unvalidated; uninterrupted equivalence is not established. Plan only; no execution."
+          }
+        ],
+        "m12c_sha256": "af6acac2a6cbe7d63dac4df06d61a55d1a101dce4c9222ad71666c5989fc7e38",
+        "release_sha256": "f6234b62407c16641e0c2e63b7f6710a6e668e6e47c59ef1469d06cd836ec6f0",
+        "AST_identical_after_reverting_one_string": true
+      },
+      {
+        "path": "pz.py",
+        "classification": "public help/status display string only",
+        "changes": [
+          {
+            "line": 14,
+            "before": "Implemented model execution; GPU NOT RUN in M12A; requires --execute",
+            "after": "Explicit execution; M12C learned-PPO smoke/resume validated only; requires --execute"
+          }
+        ],
+        "m12c_sha256": "95a32daff3dfe9188209de665b81a29a8c6fe40476a0302094e015cc7f9766f5",
+        "release_sha256": "6f9eb3d4295578d88c7244675dd30345625ee7392d1ff4c39cb1acf9214d4cd0",
+        "AST_identical_after_reverting_one_string": true
+      }
+    ],
+    "new_GPU_validation": false,
+    "exact_M12C_archive_sha256": "8772ffcc4883abd61953d62084aef0aad71bf0e8a72b1ae80a90a45925dae7ae",
+    "project_code_license": "Apache-2.0",
+    "repository": "yangqi0/petitzero",
+    "intended_visibility": "Public",
+    "first_release_excludes": [
+      "weights/adapters",
+      "exact private prompts",
+      "private SFT demonstrations",
+      "private engineering evidence"
+    ]
+  }
+}

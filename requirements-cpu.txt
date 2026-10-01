@@ -1,0 +1,4 @@
+# CPU math/plots use these already installed versions; CUDA is not used.
+torch==2.8.0+cu126
+matplotlib==3.10.9
+numpy==2.2.6

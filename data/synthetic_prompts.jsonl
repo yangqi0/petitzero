@@ -1,0 +1,16 @@
+{"band": "add_sub_solvable", "id": "SYNTH-01", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [1, 12, 13], "sft_exposed": false, "target": 26}
+{"band": "add_sub_solvable", "id": "SYNTH-02", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [2, 12, 13], "sft_exposed": true, "target": 27}
+{"band": "add_sub_solvable", "id": "SYNTH-03", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [3, 12, 13], "sft_exposed": false, "target": 28}
+{"band": "add_sub_solvable", "id": "SYNTH-04", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [4, 12, 13], "sft_exposed": true, "target": 29}
+{"band": "add_sub_solvable", "id": "SYNTH-05", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [5, 12, 13], "sft_exposed": false, "target": 30}
+{"band": "add_sub_solvable", "id": "SYNTH-06", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [6, 12, 13], "sft_exposed": true, "target": 31}
+{"band": "add_sub_solvable", "id": "SYNTH-07", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [7, 12, 13], "sft_exposed": false, "target": 32}
+{"band": "add_sub_solvable", "id": "SYNTH-08", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [8, 12, 13], "sft_exposed": true, "target": 33}
+{"band": "requires_mul_or_div", "id": "SYNTH-09", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [2, 10, 11], "sft_exposed": false, "target": 9}
+{"band": "requires_mul_or_div", "id": "SYNTH-10", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [3, 10, 11], "sft_exposed": true, "target": 19}
+{"band": "requires_mul_or_div", "id": "SYNTH-11", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [4, 10, 11], "sft_exposed": false, "target": 29}
+{"band": "requires_mul_or_div", "id": "SYNTH-12", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [5, 10, 11], "sft_exposed": true, "target": 39}
+{"band": "requires_mul_or_div", "id": "SYNTH-13", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [6, 10, 11], "sft_exposed": false, "target": 49}
+{"band": "requires_mul_or_div", "id": "SYNTH-14", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [7, 10, 11], "sft_exposed": true, "target": 59}
+{"band": "requires_mul_or_div", "id": "SYNTH-15", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [8, 10, 11], "sft_exposed": false, "target": 69}
+{"band": "requires_mul_or_div", "id": "SYNTH-16", "namespace": "SYNTHETIC_ENGINEERING", "numbers": [9, 10, 11], "sft_exposed": true, "target": 79}

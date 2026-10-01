@@ -1,0 +1,11 @@
+# Limitations
+
+- **Population:** historical FINAL256 and CONFIRM128 are separate and now observed. CONFIRM is a same-range residual slice, not an independent universe draw or unseen confirmation after M10. Both populations were observed before the detailed M11 protocol.
+- **Scope:** one shared M1A SFT initializer, a small strict-verifier arithmetic task, three seeds and fixed endpoints. Online verified-positive RFT is a supervised comparator, not policy-gradient RL. Matched requests/nominal updates do not mean equal compute.
+- **Metrics:** finite pass@32 is observed sampled question coverage, not true policy support. Endpoint SD is neither gradient variance nor a confidence interval. No significance test, broad reasoning gain or universal method ranking is claimed.
+- **Intervention:** zero-minus-learned CONFIRM pass@1 is+3.263pp (sample SD1.684); pass@32 is+4.948pp (SD8.354), including seed17 at−2.344pp. Zero values change temporal credit and trajectories as well as potentially variance; this does not establish that critics are useless.
+- **PPO43:** continuation used a documented post-failure recovered slot192 state without its original committed identity. Historical memory-to-disk roundtrip and uninterrupted equivalence were not proven. PPO43 stays primary; pair43 and learned/paired summaries inherit the caveat. The existing matched17/29 secondary table applies to both branches.
+- **Portable coverage:** only learned-PPO's M12C two-process smoke on its16 synthetic prompts and recorded RTX4090/environment passed native save/exit/resume. GRPO/RFT/ppo_zero native paths, standalone actor evaluation, other shapes/devices, full historical replay and uninterrupted equivalence remain unvalidated.
+- **Distribution:** weights, exact private prompt sets, SFT demonstrations, raw private answers and optimizer histories are absent. Compact count rows contain question IDs and success counts, not hidden solutions. Project code uses Apache-2.0; the first public release excludes these private data and model assets. Any later scope expansion requires a separate owner decision.
+
+See the [technical report](technical_report.md) for full-precision results and [reproduction guide](reproduce.md) for operational boundaries. The M12C engineering smoke contributes no scientific result rows.

@@ -1,0 +1,8 @@
+{
+  "schema": "PZ_NEW_EXECUTION_INTENT_V1",
+  "runtime": "implemented_gpu_not_run",
+  "base_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "profile": "BF16 checkpoint values promoted to FP32; active unmerged FP32 LoRA; dropout zero; native cached B1; math SDPA; no autocast or TF32",
+  "formal_endpoint": "fixed nominal slot256; no best selection",
+  "historical_authorization_reusable": false
+}

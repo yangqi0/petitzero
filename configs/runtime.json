@@ -1,0 +1,30 @@
+{
+  "schema": "PZ_PORTABLE_RUN_V1",
+  "base_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "recipe": {
+    "profile": "F-M",
+    "max_new_tokens": 128,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "rollout_questions": 8,
+    "samples_per_question": 4,
+    "microbatch": 2,
+    "passes": 2,
+    "actor_lr": 1e-05,
+    "critic_lr": 0.0001,
+    "warmup_slots": 8,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "alignment_atol": 0.0002,
+    "alignment_rtol": 1e-05
+  },
+  "base_weight_hashes": {
+    "model.safetensors": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  }
+}

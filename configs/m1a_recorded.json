@@ -1,0 +1,184 @@
+{
+  "accumulation": 8,
+  "adapter_dtype": "float32",
+  "attention": "sdpa",
+  "autocast": "bfloat16",
+  "base_dtype": "bfloat16",
+  "data_freeze": {
+    "cold_start_is_subset_of_train": true,
+    "cold_start_rows": 512,
+    "files": {
+      "cold_start_train512.jsonl": {
+        "bytes": 437731,
+        "sha256": "ac8543a85305e60af293106cc0694862c7e0ed4a70604f1a018321fa1b625eb1"
+      },
+      "dev.jsonl": {
+        "bytes": 54479,
+        "sha256": "4f057d462a0a4d57851f0f94ce76cec85352072f92e77273f62860bf6348faf1"
+      },
+      "final.jsonl": {
+        "bytes": 218821,
+        "sha256": "73643d684b0c4c1c5b9b99083dde67f8c40e5f079ff6c32566465a721638a181"
+      },
+      "train.jsonl": {
+        "bytes": 875429,
+        "sha256": "6482f429e49e55b7f7ce0b9bb638f86548d40fbc0942e37bb53ac19f61c6c856"
+      }
+    },
+    "final256_no_model_evaluation_in_m1a": true,
+    "m0_groups_excluded": 64,
+    "no_split_or_target_chosen_from_outputs": true,
+    "notes": [
+      "Programs know final targets only to construct and verify a valid task; no policy scoring/tuning uses final256.",
+      "Held-out multisets test within this generated task distribution, not new arithmetic operators or general mathematical reasoning.",
+      "Warm start teaches both output protocol and solution structures; it is not a pure format intervention."
+    ],
+    "only_cold_start_train512_authorized_for_m1a_supervision": true,
+    "rows": {
+      "dev": 64,
+      "final": 256,
+      "train": 1024
+    },
+    "seed": 20260929,
+    "selection_policy": "Split numeric multiset by hash first; alternate mathematical bands within split; hash-select target; one exact witness, no rephrases.",
+    "unused_groups": 132
+  },
+  "effective_batch": 16,
+  "epoch_indices": [
+    0,
+    1
+  ],
+  "epochs": 2,
+  "final_model_scored": false,
+  "gradient_checkpointing": {
+    "use_reentrant": false
+  },
+  "lora": {
+    "bias": "none",
+    "init_lora_weights": true,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "r": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "max_new_tokens": 128,
+  "max_total_tokens": 1024,
+  "microbatch": 2,
+  "model_files": {
+    "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "README.md": "2e1bcd8bd964728a820be709fa0f7b9dd54817a94fd2254c535df70c5e67fada",
+    "config.json": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+    "generation_config.json": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model.safetensors": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "new_answers": 960,
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "learning_rates": [
+      2.5e-05,
+      5e-05,
+      7.500000000000001e-05,
+      0.0001,
+      9.850000000000001e-05,
+      9.7e-05,
+      9.55e-05,
+      9.400000000000001e-05,
+      9.25e-05,
+      9.1e-05,
+      8.950000000000001e-05,
+      8.8e-05,
+      8.65e-05,
+      8.5e-05,
+      8.35e-05,
+      8.2e-05,
+      8.05e-05,
+      7.9e-05,
+      7.75e-05,
+      7.6e-05,
+      7.45e-05,
+      7.3e-05,
+      7.15e-05,
+      7e-05,
+      6.850000000000001e-05,
+      6.7e-05,
+      6.549999999999999e-05,
+      6.400000000000001e-05,
+      6.25e-05,
+      6.1000000000000005e-05,
+      5.95e-05,
+      5.8e-05,
+      5.65e-05,
+      5.5e-05,
+      5.35e-05,
+      5.2000000000000004e-05,
+      5.050000000000001e-05,
+      4.9e-05,
+      4.75e-05,
+      4.6e-05,
+      4.4500000000000004e-05,
+      4.3e-05,
+      4.1500000000000006e-05,
+      3.9999999999999996e-05,
+      3.85e-05,
+      3.7000000000000005e-05,
+      3.5499999999999996e-05,
+      3.4e-05,
+      3.249999999999999e-05,
+      3.0999999999999995e-05,
+      2.95e-05,
+      2.8000000000000003e-05,
+      2.6500000000000007e-05,
+      2.4999999999999998e-05,
+      2.3500000000000002e-05,
+      2.2000000000000006e-05,
+      2.050000000000001e-05,
+      1.9e-05,
+      1.749999999999999e-05,
+      1.5999999999999996e-05,
+      1.45e-05,
+      1.299999999999999e-05,
+      1.1499999999999995e-05,
+      9.999999999999999e-06
+    ],
+    "max_grad_norm": 1.0,
+    "name": "AdamW",
+    "weight_decay": 0.0
+  },
+  "optimizer_state_dtype": "float32",
+  "reload_tolerance": {
+    "atol": 1e-05,
+    "chosen_before_training": true,
+    "rtol": 1e-05
+  },
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "seed": 20260929,
+  "selected_ce_dtype": "float32",
+  "target_count_range": [
+    8,
+    11
+  ],
+  "targets_per_epoch": 4947,
+  "total_length_range": [
+    97,
+    104
+  ],
+  "train_rows": 512,
+  "updates": 64
+}
