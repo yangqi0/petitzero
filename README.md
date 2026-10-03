@@ -2,7 +2,7 @@
 
 A single-RTX 4090 study of online LLM post-training on exact-verifier arithmetic, comparing GRPO, online verified-positive RFT and learned-value PPO, followed by a separate fixed-zero-value PPO intervention.
 
-Author and owner: **Yang Qi**. PetitZero is independent of PetitGPT. PetitZero project code is licensed under Apache-2.0. This repository contains code, compact saved results and documentation; model weights/adapters and private training artifacts are not included.
+PetitZero project code is licensed under Apache-2.0. This repository contains code, compact saved results and documentation; model weights/adapters and private training artifacts are not included.
 
 ## Research questions
 
